@@ -2,8 +2,8 @@
 
 I build systems at the intersection of physical operations and AI infrastructure.
 
-Day job: Professional Services Program Manager of simultaneous multi-million dollar reconstruction projects 
-in the Palisades Fire rebuild area. After hours: building autonomous agents and 
+Day job: Professional Services Program Manager on simultaneous multi-million dollar Palisades Fire reconstruction projects.
+After hours: building autonomous agents and 
 human-in-the-loop pipelines that solve problems I've run into in the real world.
 
 ## What I'm building
