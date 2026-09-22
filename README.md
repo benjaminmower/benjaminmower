@@ -60,6 +60,16 @@ Every one of these ships with the same non-negotiables:
 
 That last one is the part I care about most. It's easy to ship an agent that looks impressive. The work is proving it beats the boring deterministic baseline, on real data, and being willing to report when it didn't — then shipping the agent turned off.
 
+## Toolkit
+
+**AI systems** — agent harness and tool-registry design · tool-use loops · context management and grounding · hallucination containment · RAG with citation validation · evals, backtesting, and error analysis · human-in-the-loop design · guardrails and allow-listed write paths · agent observability and tracing · prompt and context engineering · MCP servers and tool manifests · token budgeting and cost/latency/quality tradeoffs · Anthropic and OpenAI APIs
+
+**Product & program** — discovery and requirements · roadmap and prioritization · scoping and tradeoff decisions · success criteria and measurement design · cross-functional stakeholder management · executive communication · rollout, adoption, and change management · implementation and onboarding · integration and partner API evaluation · risk registers and dependency tracking · Agile/Scrum (CSM in progress)
+
+**Build** — Python · JavaScript/TypeScript · REST APIs, OpenAPI, OAuth 2.0 · Google Cloud (Cloud Run, IAM, Firestore) · Cloudflare Workers + D1 · SQLite/FTS5 · Playwright · server-sent events · pytest and contract testing · Git and CI/CD · Airtable · Linear
+
+**Domain** — construction program management and trade sequencing · permitting, LADBS plan check, and Title 24 · media production operations, asset tracking, and metadata · proptech
+
 ## How I work
 
 Claude Code and OpenAI Codex in the terminal daily — not as autocomplete, but as build partners. I write the spec, the guardrails, and the eval first; the agent writes most of the code against them.
