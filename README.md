@@ -1,6 +1,6 @@
 # Benjamin Mower
 
-**I build the guardrails, interfaces, and evals that make AI agents safe to point at real systems, and the product decisions about when they shouldn't be.**
+**Operations and Program Leader who builds the AI systems that let small teams do the work of much larger ones.**
 
 17 years running the operations systems behind physical work: construction program management and trade sequencing, creative marketing operations and production tracking at Paramount+, technical education and team leadership at Apple, production with Netflix, Amazon, and Warner Bros. Discovery. I've been the person whose schedule slips when a process fails, which is why I build agent tooling that earns trust before it gets authority.
 
