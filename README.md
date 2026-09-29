@@ -1,79 +1,43 @@
 # Benjamin Mower
 
-**Operations and Program Leader who builds the AI systems that let small teams do the work of much larger ones.**
+I build AI agents and the infrastructure that decides what they're allowed to do. Days I run delivery on multi-million dollar Palisades Fire reconstruction projects in LA County. Nights and weekends I ship agent systems, evaluation harnesses, and the tooling around them.
 
-17 years running the operations systems behind physical work: construction program management and trade sequencing, creative marketing operations and production tracking at Paramount+, technical education and team leadership at Apple, production with Netflix, Amazon, and Warner Bros. Discovery. I've been the person whose schedule slips when a process fails, which is why I build agent tooling that earns trust before it gets authority.
+Claude Code and Codex in terminal daily, as the method rather than autocomplete. Everything below is code I wrote.
 
-**Day job:** Professional Services Program Manager on simultaneous multi-million dollar Palisades Fire reconstruction projects: trade sequencing, dependency tracking, and stakeholder communication across subcontractors, inspectors, and owners.
+## Building now
 
-**After hours:** agent platforms, human-in-the-loop pipelines, and public MCP infrastructure, scoped, shipped, and measured against problems I've hit on a job site.
+**[Tribute](https://github.com/benjaminmower/tribute)** — A browser extension that flags untested vibe-coded apps where you find them, backed by an agentic review harness. Apps earn a place on the register by passing a Tune Up: Playwright drives a real browser through the first-time customer journey and Claude grades five stages against a versioned rubric, with explainable reasoning on every score. TypeScript monorepo, Manifest V3, Zod-validated register shipped through CI to a `dist` branch and out over jsDelivr. Pre-alpha, five inaugural apps stress-testing the rubric.
 
-**Looking for:** product and program roles building agent platforms, AI implementation, and the evals and guardrails around them.
+**Superintend** — An AI layer over project tracking that reads messy Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run showing exact diffs, and contract tests gate any adapter before it touches a production project.
 
-📍 Santa Monica, CA // Salt Lake City, UT · ✉️ benjaminmower@gmail.com · [LinkedIn](https://linkedin.com/in/benjaminmower) · [Résumé](resume.pdf)
+**[Sendiment](https://sendiment.com)** — Anonymous ephemeral thoughts, shared between humans and AI assistants. A deployed remote MCP server on Cloudflare Workers with D1, published against the MCP schema with a versioned manifest and a streamable-HTTP endpoint, so any assistant can connect. No accounts, no names, no email. Rate limiting runs on a salted IP hash with the salt rotating daily and old hashes swept after two days, so the system can tell two posts share a source today without ever storing who that source is.
 
----
+**[lagsnap](https://github.com/benjaminmower/lagsnap)** — A Chrome extension that auto-converts screenshots for browser LLM conversations.
 
-## What I'm building
+## Shipped and in production
 
-**[Superintend](https://github.com/benjaminmower/superintend)**: *Schedule risk detection on the tracker a construction team already uses.*
+**Class management platform** *(private repo)* — Replaced two commercial SaaS products after studying where one of them broke down for the business. Enrollment, scheduling, attendance, billing, curriculum progress, parent portal, admin operations. A twenty-employee studio has run on it since 2024. Postgres on Cloud SQL with no ORM: 16 tables, 12 enum types, 21 ordered raw-SQL migrations, views and triggers, migrations gated in Cloud Build so the app never reaches Cloud Run ahead of its schema. Two independent authorization layers — role-based plus a per-record ownership check, so a new endpoint fails closed rather than leaking by omission. The repo stays private because the system holds children's records.
 
-Construction schedules slip in the gap between "someone asked" and "someone answered." Superintend finds that gap in the weekly Google Sheet my Palisades Fire reconstruction projects run on (**280 items, 51 subcontractors, 39 weekly tabs**) and writes back a risk flag and one specific next action per item (*"Call Jimmy today to confirm gas pipe crew arrival; overdue since 8/31."*).
+**[Flypost](https://github.com/benjaminmower/Flypost)** — A machine-readable registry of local events, built solo in three months against a six-month estimate for a team of engineers. Six production AI agents across three brokerages, each with a staff-facing agent that could publish and edit and a customer-facing agent that could only read, split on permissions. A published versioned MCP tool manifest and OpenAPI contract, verified end to end by connecting ChatGPT and Claude as clients and reading and seeding data through the API. Autonomous ingestion agent with three stop conditions and separate decision and proof logs, plus roughly 62 tests including anti-hallucination and server-authority suites. Infrastructure is switched off; the code is real.
 
-**The constraint that drove the design:** the superintendent is never going to adopt a new tool, and he's right not to. The tracker works. So the sheet stays the only interface the field and office teams touch. Adoption cost is zero, the rollout is reversible, and the agent writes only into columns it owns. Every construction-software company that asked a GC to migrate off their spreadsheet learned that lesson expensively.
+**[HireNear](https://github.com/benjaminmower/hirenear)** — Map-first local job discovery. The agent extracts resume signals, discovers businesses, inspects sites, and scores fit; the human decides which doors to knock on. That confirmation step does three jobs at once: user control, natural rate limiting at human speed, and making each result feel earned. Prompt-injection framing on untrusted input, SSRF-safe URL validation, robots.txt parsed per origin, per-provider daily budgets, and a full non-LLM fallback path.
 
-**The scoping decision:** Sheets is the first adapter, not the architecture. Features run against a source-agnostic `TrackerSource` interface with capability flags, so a read-only CSV export or a Procore integration degrades gracefully instead of crashing, but I shipped exactly one adapter first, rather than building for customers who don't exist yet. One contract suite gates every adapter before it's trusted with a real project.
+**[Beat the Fleet](https://github.com/benjaminmower/beat-the-fleet)** — Product concept and interactive mockup for gamifying autonomous vehicle rides.
 
-**The success criteria, defined before the results:** the risk rules are deterministic Python, so they can be **backtested against ~3,100 real recorded edits**: precision, recall, and lead time against three published baselines, with the slip definition frozen in advance so the numbers can't be tuned to flatter the tool. An agent layer that investigates each flagged item ships only if that eval says it beats the rules. If it doesn't, it ships off by default and the README says so.
+## How I think about agent safety
 
-Flagging is live on the real projects. Brief, weekly report, and the measured agent layer are next.
+Boundaries belong in code, not in documentation and hope.
 
-**[Sendiment](https://github.com/benjaminmower/sendiment)**: *An anonymous, ephemeral thought stream, and a public MCP server.*
+- **Explicit allow-lists over trust.** Flypost's ingestion endpoint stripped every out-of-scope field before storage using both a forbidden-key list and a prefix rule, because documenting a separation fails the first time someone adds a field in a hurry.
+- **Structural grounding over instruction.** Verified system data is stated as fact; model knowledge carries a mandatory disclosure marker. Telling a model not to hallucinate does not work. Giving it two tiers and a rule about which is which does.
+- **Dry runs and exact diffs** before anything writes.
+- **"Not found" over a plausible guess.** Anti-hallucination and server-authority tests check that the model never invents or overrides identifiers the server owns.
+- **Bound every autonomous run.** Token budget, wall clock, and source count as independent stop conditions. Per-provider daily ceilings rather than one global cap, so a runaway dependency is obvious instead of hidden.
+- **Log the why separately from the what.** A decision log and a proof log, because those are different investigations and one combined log serves neither.
+- **Degrade, don't fail.** A non-LLM path throughout, so an unavailable or over-budget model still produces a real answer.
 
-Short anonymous "pebbles" fall down the screen; a stranger can skip one to keep it alive longer, otherwise it sinks and disappears for good. Runs as a remote MCP server on Cloudflare Workers with a D1 database, published to the MCP schema with a versioned server manifest and a streamable-HTTP endpoint, so any AI assistant can connect and cast a pebble too. Agent casts render visibly distinct from human ones, because a reader should always know which they're looking at. Abuse is rate-limited through a salted, daily-rotating hash of the requester's IP, swept after two days, with no accounts, names, or raw addresses ever stored. Live at [benjaminmower.github.io/sendiment](https://benjaminmower.github.io/sendiment)
+## Background
 
-### Earlier work: paused in 2026, code remains public
+Seventeen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to under an hour, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. A decade as a Digital Image Technician and Solutions Architect on Netflix, Amazon, and Warner Bros. Discovery productions, and six years at Apple as a Technical Educator and Team Lead.
 
-**[Flypost](https://github.com/benjaminmower/Flypost)**: *A machine-readable local events registry with a production agentic ingestion loop.*
-
-Claude Sonnet ran as the reasoning engine inside a tool loop that autonomously discovered sources, inspected pages via Playwright, extracted structured event data, deduplicated against Firestore, and published to the registry, with token budget guards and chain-of-custody proof logging per run. Shipped a versioned MCP tool manifest for the read surface, with tiered field access enforced structurally rather than by prompt, and separate agent-facing and client-facing surfaces because the publishing agent needed write permissions the client had no business holding.
-
-The read side included a Web Concierge: an embeddable chat widget, configured per brokerage with its own branding and filtered data, where GPT-4o-mini answered only from live results it retrieved through tool calls to the events API. Verified listing data and general area context came back in separate fields, with area context always carrying a disclosure. It streamed responses over server-sent events with a non-streaming fallback, was hardened after a security review (HTML sanitization, validated browser storage, rate limiting, no personal data in logs), and ran behind a feature flag so it could never touch the production ingestion loop.
-
-**Why it's paused:** I killed the per-brokerage roadmap when Redfin and Compass shipped their own AI faster than I could build per-partner, pivoted to presence verification at open houses, and got it working with a real agent at Compass, then found that visitors wouldn't give feedback because it weakened their negotiating position. The technology worked; the incentive didn't. I shut it down on user incentives rather than rebuild it around a need that wasn't there.
-
-**[HireNear](https://github.com/benjaminmower/hirenear)**: *A map-first local hiring scout.*
-
-Paste a resume, drop a pin, and HireNear walks the surrounding area identifying businesses with hiring signals. **Human-in-the-loop by design:** AI handles resume signal extraction, geospatial discovery, and fit scoring; the user drives every inspection decision, because the cost of a wrong automated outreach lands on the job seeker. Built with concurrent website inspection, real-time event emission via SSE, and a qualification-gated notification system. Public pages are statically prerendered for LLM discoverability with llms.txt, Schema.org JSON-LD, and AI citation baseline testing post-deploy.
-
-**Also:** [Beat the Fleet](https://github.com/benjaminmower/beat-the-fleet) (gamified AV routing concept) · [lagsnap](https://github.com/benjaminmower/lagsnap) (Chrome extension for LLM-ready screenshots)
-
----
-
-## How I think about AI risk
-
-Every one of these ships with the same non-negotiables:
-
-- **Allow-lists, not trust.** Agents never touch data or systems outside an explicit list, enforced in one function and covered by a test, not requested in a prompt.
-- **Dry-run everything.** Every write path shows the exact diff before anything real happens.
-- **Structural checks over prompted ones.** Contract tests, schema validation, tiered access. A prompt asking nicely is not a control.
-- **"Not found" is a valid answer.** When there isn't enough support, that's the output, never a guess.
-- **Evals before authority.** Nothing points at a real system until it's been measured against what actually happened, with success criteria defined in advance and published even when they say the simpler approach won.
-
-That last one is the part I care about most. It's easy to ship an agent that looks impressive. The work is proving it beats the boring deterministic baseline, on real data, and being willing to report when it didn't, then shipping the agent turned off.
-
-## Toolkit
-
-**AI systems:** agent harness and tool-registry design · tool-use loops · context management and grounding · hallucination containment · tool-calling retrieval and grounding · evals, backtesting, and error analysis · human-in-the-loop design · guardrails and allow-listed write paths · agent observability and tracing · prompt and context engineering · MCP servers and tool manifests · token budgeting and cost/latency/quality tradeoffs · Anthropic and OpenAI APIs
-
-**Product & program:** discovery and requirements · roadmap and prioritization · scoping and tradeoff decisions · success criteria and measurement design · cross-functional stakeholder management · executive communication · rollout, adoption, and change management · implementation and onboarding · integration and partner API evaluation · risk registers and dependency tracking · Agile/Scrum (CSM in progress)
-
-**Build:** Python · JavaScript/TypeScript · REST APIs, OpenAPI, OAuth 2.0 · Google Cloud (Cloud Run, IAM, Firestore) · Cloudflare Workers + D1 · SQLite/FTS5 · Playwright · server-sent events · pytest and contract testing · Git and CI/CD · Airtable · Linear
-
-**Domain:** construction program management and trade sequencing · permitting, LADBS plan check, and Title 24 · media production operations, asset tracking, and metadata · proptech
-
-## How I work
-
-Claude Code and OpenAI Codex in the terminal daily, not as autocomplete, but as build partners. I write the spec, the guardrails, and the eval first; the agent writes most of the code against them.
-
-I'm interested in where physical presence meets digital trust: where AI agents can produce verified, auditable ground truth that humans can actually act on. The hardest part is rarely the model. It's deciding what the agent is allowed to do, proving it does that, and designing the rollout so the people who have to live with it aren't asked to change first.
+Reach me at benjaminmower@gmail.com.
