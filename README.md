@@ -2,7 +2,7 @@
 
 I build AI agents and the infrastructure that decides what they're allowed to do. Days I run delivery on multi-million dollar Palisades Fire reconstruction projects in LA County. Nights and weekends I ship agent systems, evaluation harnesses, and the tooling around them.
 
-Claude Code and Codex in terminal daily, as the method rather than autocomplete. Everything below is code I wrote.
+Claude Code and Codex in terminal daily, because I see everyday problems and just plain want to make solutions. Everything below is code I wrote.
 
 **[Resume](resume.pdf)** · benjaminmower@gmail.com · Open to AI deployment, enablement, and implementation roles. Remote.
 
