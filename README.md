@@ -4,15 +4,13 @@ I build AI agents and the infrastructure that decides what they're allowed to do
 
 Claude Code and Codex in terminal daily, because I see everyday problems and just plain want to make solutions. Everything below is code I wrote.
 
-**[Resume](resume.pdf)** · benjaminmower@gmail.com · Open to AI deployment, enablement, and implementation roles. Remote.
+I come to this from entertainment. Since 2013 I have designed production pipelines for Netflix, Amazon, and Warner Bros. Discovery productions, and I direct, produce, and write original work.
+
+**[Resume](resume.pdf)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, and implementation roles. Remote.
 
 ## Building now
 
 **Superintend** — An AI layer over project tracking that reads messy Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run showing exact diffs, and contract tests gate any adapter before it touches a production project.
-
-**Boardwatch** — A local job-search workbench I built to run my own search, with a web UI for role review and application drafting. Polls Greenhouse, Lever, Ashby and Workday board APIs on a schedule and diffs on posting ID, so "new" means a posting that wasn't there last time. Deterministic hard filters run before any phrase matching: a published-salary floor, word-boundary location matching so `CA` doesn't match "Carolina," and title excludes with keep-patterns so "AI Enablement Engineer" survives an `Engineer` exclude. Workday exposes no endpoint returning every job with its description, so it searches per lane phrase, skips stale listings, fetches detail only for unseen postings, and does the real filtering locally.
-
-Fit assessment retrieves from a local folder of my own notes, and every supported reason must cite both the posting excerpt and the profile file, section, and excerpt behind it. Missing evidence is treated as unknown rather than as proof of absence. When a requirement has no coverage the UI asks up to three questions, and answers don't enter the index without explicit approval. Lane tuning is graded against real decisions rather than model opinion: labeled yes/maybe/no calls live in one file, proposal-prompt examples in another, deliberately separate, and a candidate lane is adopted only if labeled precision strictly improves or ties while recall improves. A lane whose precision decays gets flagged, never silently removed. Each run reports its own token spend.
 
 **Class management platform** *(private repo, in beta)* — A replacement for two commercial SaaS products, built after studying where one of them broke down for the business. Enrollment, scheduling, attendance, billing, curriculum progress, parent portal, admin operations, for a studio running hundreds of students across two locations with 20 employees. Working end to end including Stripe checkout against test data, not yet cut over. Postgres on Cloud SQL with no ORM: 16 tables, 12 enum types, 21 ordered raw-SQL migrations, views and triggers, migrations gated in Cloud Build so the app never reaches Cloud Run ahead of its schema. Two independent authorization layers — role-based plus a per-record ownership check, so a new endpoint fails closed rather than leaking by omission. The repo stays private because the system holds children's records.
 
@@ -30,22 +28,16 @@ Fit assessment retrieves from a local folder of my own notes, and every supporte
 
 **[Beat the Fleet](https://github.com/benjaminmower/beat-the-fleet)** — Product concept and interactive mockup for gamifying autonomous vehicle rides.
 
-## How I think about agent safety
+## Entertainment work
 
-Boundaries belong in code, not in documentation and hope.
+**Production pipelines.** Entertainment technologist and creator since 2013. I designed the data workflow from pre-production through production to post and VFX on productions and campaigns including Netflix Tudum, Tommy Hilfiger, DKNY featuring Hailey Bieber, Amazon Essentials, NARS, and Riot Games RiotNow, and kept chain of custody and audit-ready logging for footage that cannot be reshot. Tools: Silverstack Lab, Premiere Pro, Frame.io, DaVinci Resolve, Canva.
 
-- **Explicit allow-lists over trust.** Flypost's ingestion endpoint stripped every out-of-scope field before storage using both a forbidden-key list and a prefix rule, because documenting a separation fails the first time someone adds a field in a hurry.
-- **Answer from the corpus, not from the model.** The brokerage concierge ran tool-calling retrieval against a live endpoint and answered only from what came back. Public queries saw a registry-safe field allowlist; tenant-scoped queries saw full detail. Boardwatch restricts its discovery search to board domains and nothing else. Where an assistant is allowed to look is a design decision, not a prompt instruction.
-- **Make every claim cite its source, on both sides.** Boardwatch's fit assessment has to name the posting excerpt *and* the profile file, section, and excerpt supporting each reason. Absent evidence is recorded as unknown, never as proof of absence, and nothing new enters the index without explicit approval.
-- **Structural grounding over instruction.** Verified system data is stated as fact; model knowledge carries a mandatory disclosure marker. Telling a model not to hallucinate does not work. Giving it two tiers and a rule about which is which does.
-- **Dry runs and exact diffs** before anything writes.
-- **"Not found" over a plausible guess.** Anti-hallucination and server-authority tests check that the model never invents or overrides identifiers the server owns.
-- **Bound every autonomous run.** Token budget, wall clock, and source count as independent stop conditions. Per-provider daily ceilings rather than one global cap, so a runaway dependency is obvious instead of hidden.
-- **Log the why separately from the what.** A decision log and a proof log, because those are different investigations and one combined log serves neither.
-- **Degrade, don't fail.** A non-LLM path throughout, so an unavailable or over-budget model still produces a real answer.
+**Directing and producing.** Director and executive producer on [I Hope My Ex Doesn't See This](https://www.imdb.com/title/tt12328594/) and [Dark White](https://www.imdb.com/title/tt12280468/) (both 2020). Writer and creator credits on For Art's Sake and Prize or Punishment. [Full credits on IMDb](https://www.imdb.com/name/nm6156422/).
+
+**Original formats.** Pitch decks for For Art's Sake, The Perfect Set, and Prize or Punishment, and game show demos for 100 for 100 (with Morgan Jay) and The College Try (with Brent Pella). Demos, decks, and credits are in the [portfolio](https://benjaminmower.github.io/portfolio/).
 
 ## Background
 
-Seventeen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to 30 to 45 minutes, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. A decade as a Digital Image Technician and Solutions Architect on Netflix, Amazon, and Warner Bros. Discovery productions, and six years at Apple as a Technical Educator and Team Lead.
+Seventeen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to 30 to 45 minutes, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. Since 2013, an entertainment technologist and creator on Netflix, Amazon, and Warner Bros. Discovery productions, designing production pipelines and directing and producing original work. Six years at Apple as a Technical Educator and Team Lead.
 
 Reach me at benjaminmower@gmail.com.
