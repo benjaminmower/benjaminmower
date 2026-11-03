@@ -4,13 +4,13 @@ I build AI agents and the infrastructure that decides what they're allowed to do
 
 Claude Code and Codex in terminal daily, because I see everyday problems and just plain want to make solutions. Everything below is code I wrote.
 
-I come to this from entertainment. Since 2013 I have designed production pipelines for Netflix, Amazon, and Warner Bros. Discovery productions, and I direct, produce, and write original work.
+I come to this from entertainment and technology, where I've worked since 2008. I have designed production pipelines for Netflix, Amazon, and Warner Bros. Discovery productions, and I direct, produce, and write original work.
 
 **[Resume](resume.pdf)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, implementation and creative technology roles. Remote.
 
 ## Building now
 
-**Superintend** — An AI layer over project tracking that reads messy Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run showing exact diffs, and contract tests gate any adapter before it touches a production project.
+**[Superintend](https://github.com/benjaminmower/superintend)** — An AI layer over project tracking that reads messy Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run showing exact diffs, and contract tests gate any adapter before it touches a production project.
 
 **Class management platform** *(private repo, in beta)* — A replacement for two commercial SaaS products, built after studying where one of them broke down for the business. Enrollment, scheduling, attendance, billing, curriculum progress, parent portal, admin operations, for a studio running hundreds of students across two locations with 20 employees. Working end to end including Stripe checkout against test data, not yet cut over. Postgres on Cloud SQL with no ORM: 16 tables, 12 enum types, 21 ordered raw-SQL migrations, views and triggers, migrations gated in Cloud Build so the app never reaches Cloud Run ahead of its schema. Two independent authorization layers — role-based plus a per-record ownership check, so a new endpoint fails closed rather than leaking by omission. The repo stays private because the system holds children's records.
 
@@ -30,7 +30,7 @@ I come to this from entertainment. Since 2013 I have designed production pipelin
 
 ## Entertainment work
 
-**Production pipelines.** Entertainment technologist and creator since 2013. I designed the data workflow from pre-production through production to post and VFX on productions and campaigns including Netflix Tudum, Tommy Hilfiger, DKNY featuring Hailey Bieber, Amazon Essentials, NARS, and Riot Games RiotNow, and kept chain of custody and audit-ready logging for footage that cannot be reshot. Tools: Silverstack Lab, Premiere Pro, Frame.io, DaVinci Resolve, Canva.
+**Production pipelines.** Entertainment and technology since 2008. I designed the data workflow from pre-production through production to post and VFX on productions and campaigns including Netflix Tudum, Tommy Hilfiger, DKNY featuring Hailey Bieber, Amazon Essentials, NARS, and Riot Games RiotNow, and kept chain of custody and audit-ready logging for footage that cannot be reshot. Tools: Silverstack Lab, Premiere Pro, Frame.io, DaVinci Resolve, Canva.
 
 **Directing and producing.** Director and executive producer on [I Hope My Ex Doesn't See This](https://www.imdb.com/title/tt12328594/) and [Dark White](https://www.imdb.com/title/tt12280468/) (both 2020). Writer and creator credits on For Art's Sake and Prize or Punishment. [Full credits on IMDb](https://www.imdb.com/name/nm6156422/).
 
@@ -38,6 +38,6 @@ I come to this from entertainment. Since 2013 I have designed production pipelin
 
 ## Background
 
-Seventeen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to 30 to 45 minutes, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. Since 2013, an entertainment technologist and creator on Netflix, Amazon, and Warner Bros. Discovery productions, designing production pipelines and directing and producing original work. Six years at Apple as a Technical Educator and Team Lead.
+Eighteen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to 30 to 45 minutes, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. Since 2008, an entertainment technologist and creator on Netflix, Amazon, and Warner Bros. Discovery productions, designing production pipelines and directing and producing original work. Six years at Apple as a Technical Educator and Team Lead.
 
 Reach me at benjaminmower@gmail.com.
