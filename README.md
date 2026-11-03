@@ -6,7 +6,7 @@ Claude Code and Codex in terminal daily, because I see everyday problems and jus
 
 I come to this from entertainment. Since 2013 I have designed production pipelines for Netflix, Amazon, and Warner Bros. Discovery productions, and I direct, produce, and write original work.
 
-**[Resume](resume.pdf)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, and implementation roles. Remote.
+**[Resume](resume.pdf)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, implementation and creative technology roles. Remote.
 
 ## Building now
 
