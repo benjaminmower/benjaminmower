@@ -1,4 +1,4 @@
-# Benjamin Mower
+# "Bronco" Benjamin Mower
 
 I build AI agents and the infrastructure that decides what they're allowed to do. Days I run delivery on multi-million dollar Palisades Fire reconstruction projects in LA County. Nights and weekends I ship agent systems, evaluation harnesses, and the tooling around them.
 
