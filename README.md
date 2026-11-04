@@ -1,10 +1,12 @@
 # "Bronco" Benjamin Mower
 
-I build AI agents and the infrastructure that decides what they're allowed to do. Days I run delivery on multi-million dollar Palisades Fire reconstruction projects in LA County. Nights and weekends I ship agent systems, evaluation harnesses, and the tooling around them.
+Entertainment and technology since 2008.
+
+Creator, operator, and Glue Guy, happiest where operations meets AI. Learned on construction sites with my dad as a kid: pay close attention to the work, anticipate the next tool needed, and have it ready to hand off. That lesson has set me apart on every project since.
+
+Manages operations workflows in residential construction and film production; writes, produces, and directs; builds AI agents from zero to one. Trusted across every seat at the table: client, director, and producer on set; legal, HR, marketing, and publicity at Paramount+; homeowner, architect, engineer, and city inspector in construction.
 
 Claude Code and Codex in terminal daily, because I see everyday problems and just plain want to make solutions. Everything below is code I wrote.
-
-I come to this from entertainment and technology, where I've worked since 2008. I have designed production pipelines for Netflix, Amazon, and Warner Bros. Discovery productions, and I direct, produce, and write original work.
 
 **[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, implementation and creative technology roles. Remote.
 
