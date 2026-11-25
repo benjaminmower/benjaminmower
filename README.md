@@ -1,45 +1,63 @@
 # "Bronco" Benjamin Mower
 
-Entertainment and technology since 2008.
+**Senior creative producer and production operations leader.**
 
-Creator, operator, and Glue Guy, happiest where operations meets AI. Learned on construction sites with my dad as a kid: pay close attention to the work, anticipate the next tool needed, and have it ready to hand off. That lesson has set me apart on every project since.
+I lead creative work from brief, scope, staffing plan, and budget through production, post, reviews, approvals, and final delivery. I also build the operating systems that help creative teams move faster without losing the work in the process.
 
-Manages operations workflows in residential construction and film production; writes, produces, and directs; builds AI agents from zero to one. Trusted across every seat at the table: client, director, and producer on set; legal, HR, marketing, and publicity at Paramount+; homeowner, architect, engineer, and city inspector in construction.
+At Paramount+, I ran daily operations across coordinators, production assistants, camera teams, and contractors for 200 productions on two Burbank stages. The work spanned promotional video, photography, key art, and international live-to-tape broadcasts across a $3 million annual portfolio. I built personnel budgets, determined staffing and production services, maintained contractor relationships, and onboarded more than 60 subcontractors across multiple states.
 
-Claude Code and Codex in terminal daily, because I see everyday problems and just plain want to make solutions. Everything below is code I wrote.
+I have also spent more than a decade leading camera-to-post workflows on thousands of film and commercial shoots, and I fully own my independent work as a director and executive producer. My technology projects grow out of the same production instinct: understand the workflow, identify the risky handoff, and build a practical system people can use.
 
-**[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · **[Portfolio](https://benjaminmower.github.io/portfolio/)** · benjaminmower@gmail.com · Open to AI deployment, enablement, implementation and creative technology roles. Remote.
+**[Creative production portfolio](https://benjaminmower.github.io/portfolio/)** · **[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · [IMDb](https://www.imdb.com/name/nm6156422/) · benjaminmower@gmail.com
 
-## Building now
+Open to senior creative producer, creative production management, production operations, post-production, and creative program management roles.
 
-**[Superintend](https://github.com/benjaminmower/superintend)** — An AI layer over project tracking that reads messy Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run showing exact diffs, and contract tests gate any adapter before it touches a production project.
+## Creative production leadership
 
-**Class management platform** *(private repo, in beta)* — A replacement for two commercial SaaS products, built after studying where one of them broke down for the business. Enrollment, scheduling, attendance, billing, curriculum progress, parent portal, admin operations, for a studio running hundreds of students across two locations with 20 employees. Working end to end including Stripe checkout against test data, not yet cut over. Postgres on Cloud SQL with no ORM: 16 tables, 12 enum types, 21 ordered raw-SQL migrations, views and triggers, migrations gated in Cloud Build so the app never reaches Cloud Run ahead of its schema. Two independent authorization layers — role-based plus a per-record ownership check, so a new endpoint fails closed rather than leaking by omission. The repo stays private because the system holds children's records.
+### Paramount+ · Technical Producer, Creative Content · 2022–2024
 
-**[Sendiment](https://benjaminmower.github.io/sendiment/)** — Anonymous ephemeral thoughts, shared between humans and AI assistants. A deployed remote MCP server on Cloudflare Workers with D1, published against the MCP schema with a versioned manifest and a streamable-HTTP endpoint, so any assistant can connect right now. No accounts, no names, no email. Rate limiting runs on a salted IP hash with the salt rotating daily and old hashes swept after two days, so the system can tell two posts share a source today without ever storing who that source is.
+Ran production operations for 200 productions across two Burbank stages, tens of thousands of assets, 60+ subcontractors, and a $3 million annual portfolio. Served as the daily operational authority for coordinators, production assistants, camera teams, and contractors while aligning creative, production, post, marketing, publicity, legal, HR, vendors, and leadership around schedules, resources, reviews, approvals, and delivery.
 
-**[Tribute](https://github.com/benjaminmower/tribute)** — A browser extension that flags untested vibe-coded apps where you find them, backed by an agentic review harness. Apps earn a place on the register by passing a Tune Up: Playwright drives a real browser through the first-time customer journey and Claude grades five stages against a versioned rubric, with explainable reasoning on every score. TypeScript monorepo, Manifest V3, Zod-validated register shipped through CI to a `dist` branch and out over jsDelivr. Pre-alpha, five inaugural apps stress-testing the rubric.
+After finding footage losing chain of custody at fragmented handoffs, I built the business case and consolidated three production tools into **Silverstack Lab**. That reduced daily media processing from six hours to 30–45 minutes.
 
-**[lagsnap](https://github.com/benjaminmower/lagsnap)** — A Chrome extension that auto-converts screenshots for browser LLM conversations.
+The Silverstack Lab workflow then triggered updates into the **Airtable database I built as the department-wide operating reference** for personnel, production calendars, payroll, dependencies, stage requests, costs, resource visibility, and reporting. Across the production workflow, errors fell to effectively zero and throughput tripled without additional headcount. I wrote the playbooks and led workshops until the team could operate the system independently.
 
-## Shipped
+### Independent director and executive producer
 
-**[Flypost](https://github.com/benjaminmower/Flypost)** — A machine-readable registry of local events, built solo in three months against a six-month estimate for a team of engineers. Six AI agents built for three brokerages, deployed and trained with one of them before I wound the company down, each with a staff-facing agent that could publish and edit and a customer-facing agent that could only read, split on permissions. A published versioned MCP tool manifest and OpenAPI contract, verified end to end by connecting ChatGPT and Claude as clients and reading and seeding data through the API. Autonomous ingestion agent with three stop conditions and separate decision and proof logs, plus roughly 62 tests including anti-hallucination and server-authority suites. Infrastructure is switched off; the code is real.
+Director and executive producer of [*I Hope My Ex Doesn't See This*](https://www.imdb.com/title/tt12328594/) and [*Dark White*](https://www.imdb.com/title/tt12280468/). I have owned concepts, briefs, budgets, staffing, schedules, vendors, production, post-production, review cycles, approvals, final delivery, pitch decks, and presentations to development executives, production companies, and agencies.
 
-**[HireNear](https://github.com/benjaminmower/hirenear)** — Map-first local job discovery. The agent extracts resume signals, discovers businesses, inspects sites, and scores fit; the human decides which doors to knock on. That confirmation step does three jobs at once: user control, natural rate limiting at human speed, and making each result feel earned. Prompt-injection framing on untrusted input, SSRF-safe URL validation, robots.txt parsed per origin, per-provider daily budgets, and a full non-LLM fallback path.
+Writer and creator credits include *For Art's Sake* and *Prize or Punishment*. I also developed and shot presentation demos for *100 for 100* with Morgan Jay and *The College Try* with Brent Pella. Selected work, decks, and demos are in the [portfolio](https://benjaminmower.github.io/portfolio/).
 
-**[Beat the Fleet](https://github.com/benjaminmower/beat-the-fleet)** — Product concept and interactive mockup for gamifying autonomous vehicle rides.
+### Film and commercial production · Digital Image Technician · 2013–present
 
-## Entertainment work
+Lead camera-to-post workflows on thousands of shoots for Netflix, Amazon, Warner Bros. Discovery, and commercial clients. I coordinate directors, producers, clients, camera departments, vendors, IT, and post around delivery specifications, formats, metadata, color, checksums, quality control, and verified media handoffs under immovable timelines.
 
-**Production pipelines.** Entertainment and technology since 2008. I designed the data workflow from pre-production through production to post and VFX on productions and campaigns including Netflix Tudum, Tommy Hilfiger, DKNY featuring Hailey Bieber, Amazon Essentials, NARS, and Riot Games RiotNow, and kept chain of custody and audit-ready logging for footage that cannot be reshot. Tools: Silverstack Lab, Premiere Pro, Frame.io, DaVinci Resolve, Canva.
+Selected productions and campaigns include Netflix Tudum, Tommy Hilfiger, DKNY featuring Hailey Bieber, Amazon Essentials, NARS, and Riot Games RiotNow. Tools include Silverstack Lab, Frame.io, Premiere Pro, DaVinci Resolve, Aspera, and MASV.
 
-**Directing and producing.** Director and executive producer on [I Hope My Ex Doesn't See This](https://www.imdb.com/title/tt12328594/) and [Dark White](https://www.imdb.com/title/tt12280468/) (both 2020). Writer and creator credits on For Art's Sake and Prize or Punishment. [Full credits on IMDb](https://www.imdb.com/name/nm6156422/).
+### Making Sense podcast · Production and Post Operations · 2024–2025
 
-**Original formats.** Pitch decks for For Art's Sake, The Perfect Set, and Prize or Punishment, and game show demos for 100 for 100 (with Morgan Jay) and The College Try (with Brent Pella). Demos, decks, and credits are in the [portfolio](https://benjaminmower.github.io/portfolio/).
+Supported the transition from audio to video through studio operations, live production, technical troubleshooting, post-production asset management, guest coordination, review workflows, and delivery using ClickUp, Riverside.fm, and Frame.io.
 
-## Background
+## Operations, training, and adoption
 
-Eighteen years across construction, media production, and software. Currently Professional Services Program Manager at Elcano Construction, running two simultaneous multi-million dollar rebuilds. Before that, Technical Producer at Paramount+, where I replaced three asset-tracking systems with one, cut a six-hour daily process to 30 to 45 minutes, and wrote the playbooks the department standardized on — the system outlived the org chart that commissioned it. Since 2008, an entertainment technologist and creator on Netflix, Amazon, and Warner Bros. Discovery productions, designing production pipelines and directing and producing original work. Six years at Apple as a Technical Educator and Team Lead.
+Currently a Professional Services Program Manager at Elcano Construction, leading two simultaneous multimillion-dollar rebuilds across clients, architects, engineers, vendors, contractors, trades, inspectors, insurers, budgets, statements of work, deliverables, schedules, change control, and RAID forecasts.
 
-Reach me at benjaminmower@gmail.com.
+Previously spent six years at Apple as a Technical Educator and Team Lead. Delivered thousands of workshops and product demonstrations, developed reusable onboarding curriculum, mentored new hires, and learned how to translate complex creative and technical workflows into guidance people can use.
+
+## Selected workflow and creative-technology systems
+
+These projects support the production story. They show how I turn ambiguous workflow problems into documented, testable systems with clear human boundaries.
+
+**[Flypost](https://github.com/benjaminmower/Flypost)** · Built a creative-technology MVP and led Compass Los Angeles from discovery through deployment, training, and support. Designed six AI agents for three brokerages and deployed and trained with one. Defined structured content requirements, read and edit permissions, versioned behavior specifications, verified-data boundaries, and fair-housing-sensitive guardrails. Published OpenAPI contracts and a versioned MCP tool manifest verified with ChatGPT and Claude.
+
+**Table Read** *(private)* · A screenplay-prototyping tool that parses Final Draft, Fountain, and text files, automatically assigns voices by character, and generates read-aloud drafts using browser voices or local open-weight text-to-speech. I use it to evaluate the pacing and flow of original scripts.
+
+**[Superintend](https://github.com/benjaminmower/superintend)** · A production tracker assistant that reads operational Google Sheets through a source-agnostic interface. Writes are restricted to AI-owned columns, every run supports a dry-run with exact diffs, and adapter contract tests gate access to production data.
+
+**[HireNear](https://github.com/benjaminmower/hirenear)** · Map-first local job discovery with a human confirmation step, prompt-injection framing, SSRF-safe URL validation, robots.txt compliance, provider budgets, and a non-LLM fallback.
+
+**[Sendiment](https://benjaminmower.github.io/sendiment/)** · An anonymous, ephemeral space for thoughts shared between people and AI assistants, implemented as a remote MCP server on Cloudflare Workers and D1 with privacy boundaries built into the architecture.
+
+## Through-line
+
+Whether the deliverable is a campaign, a production day, a post handoff, a contractor schedule, or a software workflow, my job is the same: get the right people and information in place, anticipate the failure point, communicate early, and protect the quality of the final work.
