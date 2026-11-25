@@ -8,7 +8,7 @@ At Paramount+, I ran daily operations across coordinators, production assistants
 
 I have also spent more than a decade leading camera-to-post workflows on thousands of film and commercial shoots, and I fully own my independent work as a director and executive producer. My technology projects grow out of the same production instinct: understand the workflow, identify the risky handoff, and build a practical system people can use.
 
-**[Creative production portfolio](https://benjaminmower.github.io/portfolio/)** · **[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · [IMDb](https://www.imdb.com/name/nm6156422/) · benjaminmower@gmail.com
+**[Portfolio](https://benjaminmower.github.io/portfolio/)** · **[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · [IMDb](https://www.imdb.com/name/nm6156422/) · benjaminmower@gmail.com
 
 Open to creative production management, production operations, post-production, and creative program management roles.
 
