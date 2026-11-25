@@ -1,8 +1,8 @@
 # "Bronco" Benjamin Mower
 
-**Senior creative producer and production operations leader.**
+Entertainment and technology since 2008.
 
-I lead creative work from brief, scope, staffing plan, and budget through production, post, reviews, approvals, and final delivery. I also build the operating systems that help creative teams move faster without losing the work in the process.
+Creator, operator, and Glue Guy, happiest where operations meets AI. Learned on construction sites with my dad as a kid: pay close attention to the work, anticipate the next tool needed, and have it ready to hand off. That lesson has set me apart on every project since.
 
 At Paramount+, I ran daily operations across coordinators, production assistants, camera teams, and contractors for 200 productions on two Burbank stages. The work spanned promotional video, photography, key art, and international live-to-tape broadcasts across a $3 million annual portfolio. I built personnel budgets, determined staffing and production services, maintained contractor relationships, and onboarded more than 60 subcontractors across multiple states.
 
@@ -10,7 +10,7 @@ I have also spent more than a decade leading camera-to-post workflows on thousan
 
 **[Creative production portfolio](https://benjaminmower.github.io/portfolio/)** · **[Resume](https://benjaminmower.github.io/portfolio/resume.html)** · [IMDb](https://www.imdb.com/name/nm6156422/) · benjaminmower@gmail.com
 
-Open to senior creative producer, creative production management, production operations, post-production, and creative program management roles.
+Open to creative production management, production operations, post-production, and creative program management roles.
 
 ## Creative production leadership
 
